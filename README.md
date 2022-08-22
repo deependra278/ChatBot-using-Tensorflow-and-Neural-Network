@@ -6,10 +6,10 @@ By means of this project, we have learnt how to create a Chatbot using TensorFlo
 ### a) Training Data
 Since this is a simple chatbot we don't need any massive datasets. We will just use data that we write ourselves. We used a .JSON file to write a data
 The data is structured into tags, patterns, responses, and context.
-•	**Tags:** Possible classes of user intention for asking a question.
-•	**Patterns:** The ways in which users usually ask questions relating to a particular tag.
-•	**Responses:** Predefined responses for each tag in the dataset from which the model can choose to respond to a particular question.
-•	**Context:** Contextual words relating to a tag for easy and better classification of what the user intends with their request.
+•	**Tags:** Possible classes of user intention for asking a question. <br/>
+•	**Patterns:** The ways in which users usually ask questions relating to a particular tag. <br/>
+•	**Responses:** Predefined responses for each tag in the dataset from which the model can choose to respond to a particular question. <br/>
+•	**Context:** Contextual words relating to a tag for easy and better classification of what the user intends with their request. <br/>
 
 With the four data heads explained above in an intent.json file, we can train a chatbot to suit our particular use case.
 
