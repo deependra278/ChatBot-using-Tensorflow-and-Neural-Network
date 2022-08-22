@@ -5,7 +5,7 @@ By means of this project, we have learnt how to create a Chatbot using TensorFlo
 
 ### a) Training Data
 Since this is a simple chatbot we don't need any massive datasets. We will just use data that we write ourselves. We used a .JSON file to write a data
-The data is structured into tags, patterns, responses, and context.
+The data is structured into tags, patterns, responses, and context. <br/>
 •	**Tags:** Possible classes of user intention for asking a question. <br/>
 •	**Patterns:** The ways in which users usually ask questions relating to a particular tag. <br/>
 •	**Responses:** Predefined responses for each tag in the dataset from which the model can choose to respond to a particular question. <br/>
@@ -15,19 +15,19 @@ With the four data heads explained above in an intent.json file, we can train a 
 
 ### b)	Loading our JSON Data
 Importing some modules and loading in our json data
-Imported NLTK (Natural Language Toolkit) for ***NLP (Natural Language Processing)***. This toolkit is one of the most powerful NLP libraries which contains packages to make machines understand human language and reply to it with an appropriate response.
+Imported NLTK (Natural Language Toolkit) for ***NLP (Natural Language Processing)***. This toolkit is one of the most powerful NLP libraries which contains packages to make machines understand human language and reply to it with an appropriate response. <br/>
 ### c) Extracting Data
 We need all the patterns and which class/tag they belong to. We also want a list of all the unique words in our patterns.
 
 ### d)	Word Stemming
-Stemming a word is attempting to find the root of the word. For example, the word "that’s" stem might be "that" and the word "happening" would have the stem of "happen". We will use this process of stemming words to reduce the vocabulary of our model and attempt to find the more general meaning behind sentences.
+Stemming a word is attempting to find the root of the word. For example, the word "that’s" stem might be "that" and the word "happening" would have the stem of "happen". We will use this process of stemming words to reduce the vocabulary of our model and attempt to find the more general meaning behind sentences. <br/>
 ![stemmed_word](/img/stemmed_word_example.png "Stemmed_word_example")
 For word stemming we used the ***Lancaster Stemmer Algorithm***. Lancaster Stemmer is the most aggressive stemming algorithm used for stemming. While using this stemmer in NLTK we can add our own custom rules very easily to this algorithm
 
 ### e)	Bag of Words
 
-**Neural Networks** and **Machine Learning Algorithm** require numerical input so we can’t use our list of strings. Bag of words model is used to pre-process the text by converting it into a bag of words, which keeps a count of the total occurrences of most frequently used words. What we are going to do is represent each sentence with a list the length of the number of words in our model’s vocabulary. Each position in the list will represent a word from our vocabulary. If the position in the list is a 1 then that will mean that the word exists in our sentence, if it is a 0 then the word is not present. We call this a bag of words because the order in which the words appear in the sentence is lost, we only know the presence of words in our model’s vocabulary. As well as formatting our input we need to format our output to make sense to the neural network. Similarly, to a bag of words we will create output lists which are the length of the number of labels/tags we have in our dataset. Each position in the list will represent one distinct label/tag, a 1 in any of those positions will show which label/tag is represented.
-
+**Neural Networks** and **Machine Learning Algorithm** require numerical input so we can’t use our list of strings. Bag of words model is used to pre-process the text by converting it into a bag of words, which keeps a count of the total occurrences of most frequently used words. What we are going to do is represent each sentence with a list the length of the number of words in our model’s vocabulary. Each position in the list will represent a word from our vocabulary. If the position in the list is a 1 then that will mean that the word exists in our sentence, if it is a 0 then the word is not present. We call this a bag of words because the order in which the words appear in the sentence is lost, we only know the presence of words in our model’s vocabulary. As well as formatting our input we need to format our output to make sense to the neural network. Similarly, to a bag of words we will create output lists which are the length of the number of labels/tags we have in our dataset. Each position in the list will represent one distinct label/tag, a 1 in any of those positions will show which label/tag is represented. <br/>
+ 
 ### f)	Developing a Model
 For our purpose we have used a ***standard feed-forward neural network*** with two hidden layers. Each of the hidden layer has 10 nodes. The goal of our network will be to look at a bag of words and give a class that they belong too (one of our tags from the JSON file).
 ### g)	Training and Saving the Model
